@@ -1,0 +1,41 @@
+# -------------------------------------------------------------------
+# SNAKEMAKE CONFIGURATION FILE FOR THE PREPROCESSING PIPELINE
+# -------------------------------------------------------------------
+
+tissues:
+  brain: [brain_rep1, brain_rep2]
+  thyroid: [thyroid_rep1, thyroid_rep2]
+  thymus: [thymus_rep1, thymus_rep2]
+  heart: [heart_rep1, heart_rep2]
+  lung: [lung_rep1, lung_rep2]
+  liver: [liver_rep1, liver_rep2]
+  spleen: [spleen_rep1, spleen_rep2]
+  pancreas: [pancreas_rep1, pancreas_rep2]
+  stomach: [stomach_rep1, stomach_rep2]
+  small_intestine: [small_rep1, small_rep2]
+  large_intestine: [large_rep1, large_rep2]
+  adrenal: [adrenal_rep1, adrenal_rep2]
+  kidney: [kidney_rep1, kidney_rep2]
+  muscle: [muscle_rep1, muscle_rep2]
+  adipose: [adipose_rep1, adipose_rep2]
+  bone: [bone_rep1, bone_rep2]
+  testis: [testis_rep1, testis_rep2]
+  sperm: [sperm_rep1, sperm_rep2]
+
+
+paths:
+  bam_dir: "data/bams"
+  aligned_data_dir: "data/aligned_data"
+  ref_genome: "data/annotation/mm10.noScaffold.fa"
+  gene_db: "data/annotation/gencode.vM25.annotation.gtf.gz"
+  utils_dir: "scripts/utils"
+
+params:
+  merge_threads: 4
+  cpm_min_count: 20
+  polya_threads: 2
+  polya_bin_width: 5
+  distance_matrix:
+    polya_bin_width: 5
+    threads: 36
+    block_size: 2000
