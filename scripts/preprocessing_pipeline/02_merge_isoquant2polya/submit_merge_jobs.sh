@@ -10,24 +10,25 @@ JOB_SCRIPT="scripts/preprocessing_pipeline/02_merge_isoquant2polya/run_tissue_jo
 
 # Define the list of tissues to be processed.
 TISSUE_LIST=(
-    brain
-    thyroid
-    thymus
-    heart
-    lung
-    liver
-    spleen
-    pancreas
-    stomach
-    small # short name for small intestine
-    large # short name for large intestine
-    adrenal
-    kidney
-    muscle
-    adipose
-    bone
-    testis
-    sperm
+    # brain
+    # thyroid
+    # thymus
+    # heart
+    # lung
+    # liver
+    # spleen
+    # pancreas
+    # stomach
+    # small # short name for small intestine
+    # large # short name for large intestine
+    # adrenal # short name for adrenal gland
+    # kidney
+    # muscle
+    # adipose
+    # bone # short name for bonemarrow
+    # testis
+    # sperm
+    test
 )
 
 for tissue in "${TISSUE_LIST[@]}"; do

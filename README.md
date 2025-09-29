@@ -12,6 +12,67 @@ This study constructs a comprehensive poly(A) tail atlas by performing unprecede
 * **Raw Sequencing Data**: The FLEP-seq2 data generated in this study have been deposited in the GSA (Genome Sequence Archive) database under accession number CRA028430.
 * **Analysis Code**: All code for the preprocessing pipeline and downstream analysis is hosted in this GitHub repository.
 
+## System Requirements
+- Python (version >= 3.8 is recommended)
+    - `numpy` (>= 1.23)
+    - `pandas` (>= 1.5.3)
+    - `scikit-learn` (>= 1.2.2)
+    - `matplotlib` (>= 3.7)
+    - `seaborn` (>= 0.11.2)
+    - `pysam` (>= 0.21.0)
+    - `scipy` (>= 1.10.1)
+    - `gseapy` (>= 1.0.5)
+- R (version 4.2.2)
+    - `WGCNA` (>= 1.73)
+    - `tidyverse` (>= 1.3.2)
+    - `dplyr` (>= 1.1.0)
+    - `BiocManager`
+- Command-line tools
+    - `Isoquant` (v3.6.0)
+    - `samtools` (v1.3.1)
+
+## Installation Guide
+This project requires separate Python and R environments. The recommended method for managing these is `conda`.
+
+### Step 1: Clone the Repository
+First, clone this repository to your local machine and navigate into the directory.
+```bash
+git clone https://github.com/ZhaiLab-SUSTech/Mouse_polya_atlas.git
+cd Mouse_polya_atlas
+```
+
+### Step 2: Set Up the Python Environment
+1.  **Create the environment from the file:** We provide a `python_env.yml` file to ensure all dependencies are correct. Save the following content as `python_env.yml` in the project directory:
+
+2.  **Create and activate the conda environment:**
+
+    ```bash
+    # Create the environment
+    conda env create -f python_env.yml
+
+    # You can activate it when needed with:
+    # conda activate data_prep_env
+
+### Step 3: Set Up the R Environment
+This environment is for running the main WGCNA analysis.
+1.  **Create a base R environment using conda:**
+
+    ```bash
+    conda create -n wgcna_env -c conda-forge r-base=4.2.2
+    ```
+
+2.  **Activate the new R environment:**
+
+    ```bash
+    conda activate wgcna_env
+    ```
+
+3.  **Install required R packages:**:
+    ```bash
+    Rscript install_packages.R
+    ```
+
+
 ## Project Structure
 
 The project is organized into a main Snakemake workflow, supplemented by individual scripts for debugging and a modular collection of downstream analyses.

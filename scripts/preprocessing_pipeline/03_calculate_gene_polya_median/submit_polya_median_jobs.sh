@@ -12,24 +12,25 @@ ISOQUANT_DIR="results/01_isoquant_raw"
 MERGED_DIR="results/02_merged_readinfo"
 
 TISSUE_LIST=(
-    brain
-    thyroid
-    thymus
-    heart
-    lung
-    liver
-    spleen
-    pancreas
-    stomach
-    small # short name for small intestine
-    large # short name for large intestine
-    adrenal
-    kidney
-    muscle
-    adipose
-    bone
-    testis
-    sperm
+    # brain
+    # thyroid
+    # thymus
+    # heart
+    # lung
+    # liver
+    # spleen
+    # pancreas
+    # stomach
+    # small
+    # large
+    # adrenal
+    # kidney
+    # muscle
+    # adipose
+    # bone
+    # testis
+    # sperm
+    test
 )
 
 
