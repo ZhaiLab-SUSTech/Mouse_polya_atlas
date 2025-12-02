@@ -1,0 +1,16 @@
+/* 主区域固定宽度 */
+.main-panel {
+  width: calc(100% - 300px);  /* 侧边栏宽度为300px */
+  overflow-x: hidden;
+}
+
+/* 表格容器横向滚动 */
+.dataTables_wrapper {
+  overflow-x: auto;
+  width: 100% !important;
+}
+
+/* 表格列自动换行禁用 */
+table.dataTable td {
+  white-space: nowrap;
+}
