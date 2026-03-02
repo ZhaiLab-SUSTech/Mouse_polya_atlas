@@ -46,7 +46,7 @@ def calculate_gene_tissue_correlation(
         return None, None
 
     try:
-        corr, p_value = stats.pearsonr(median_polya_values, cpm_values)
+        corr, p_value = stats.spearmanr(median_polya_values, cpm_values)
         return corr, p_value
     except ValueError:
         return None, None
@@ -96,7 +96,7 @@ def main():
         alpha=0.8
     )
     plt.title("Poly(A) Length vs. Expression Correlation", fontsize=14)
-    plt.xlabel("Pearson Correlation (r)")
+    plt.xlabel("Spearman Correlation (r)")
     plt.ylabel("Number of Isoforms")
     plt.xlim(-1, 1)
     

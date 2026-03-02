@@ -63,11 +63,11 @@ print('Data loaded!')
 
 
 ui <- navbarPage(
-  title = "Poly(A) Atlas atlas",
+  title = "Mouse Poly(A) Atlas",
   id = 'tabs',
   theme = "bootstrap",
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "www/styles.css"),  # Add this line to include the new CSS file
+    tags$link(rel = "stylesheet", type = "text/css", href = "www/styles.css"),
     tags$style(HTML("
       .custom-sidebar {
         width: 105% !important;
@@ -95,7 +95,6 @@ ui <- navbarPage(
   
   # IGV
   # add feature: params: tags to be included
-  # info: it may take some time, please wait... (ps: for quicker loading, large files are subsampled to ~xxx M)
   tabPanel(
     "IGV",
     igvModuleUI("igv")
@@ -132,11 +131,8 @@ server <- function(input, output, session) {
     gene_merged_info = gene_merged_info
   )
   igvModuleServer("igv")
-  batchGeneQueryServer("batch_gene")  # Add this line to load the new module
+  batchGeneQueryServer("batch_gene")
 
-  # output$igv_container <- renderUI({
-  # igvModuleUI("igv")
-  # })
 
 }
 
