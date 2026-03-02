@@ -69,8 +69,8 @@ def main():
     consistent_lengths = data_filtered[data_filtered['group'] == 'Poly(A)-consistent'][median_polya_col]
     elongated_lengths = data_filtered[data_filtered['group'] == 'Poly(A)-elongated'][median_polya_col]
 
-    p_vs_consistent = stats.mannwhitneyu(zygotic_lengths, consistent_lengths, alternative='greater').pvalue
-    p_vs_elongated = stats.mannwhitneyu(zygotic_lengths, elongated_lengths, alternative='greater').pvalue
+    p_vs_consistent = stats.mannwhitneyu(zygotic_lengths, consistent_lengths).pvalue
+    p_vs_elongated = stats.mannwhitneyu(zygotic_lengths, elongated_lengths).pvalue
     print(f"Zygotic vs. Consistent P-value: {p_vs_consistent:.2e}")
     print(f"Zygotic vs. Elongated P-value: {p_vs_elongated:.2e}")
 
